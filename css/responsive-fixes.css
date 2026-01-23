@@ -38,9 +38,11 @@ header.section .hero_front.padding-top_large {
   padding-top: 0 !important;
 }
 
-/* For full-screen heroes (blog page), align content to top instead of center */
-header.section.is-full-screen .hero-overlay {
-  place-items: start stretch;
+/* Blog page: reduce full-screen hero height on desktop so text is above fold */
+@media screen and (min-width: 992px) {
+  header.section.is-full-screen {
+    min-height: 70vh;
+  }
 }
 
 /* =============================================
