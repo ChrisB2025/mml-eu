@@ -58,3 +58,21 @@
 .form-error .w-form-fail {
   display: block !important;
 }
+
+/* =============================================
+   CAROUSEL GRID FIX - Side-by-side layout
+   ============================================= */
+
+/* Desktop: Make grid_5-col actually show 5 columns */
+@media screen and (min-width: 992px) {
+  .grid_5-col {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Tablet: Stack vertically (single column) */
+@media screen and (max-width: 991px) {
+  .grid_5-col {
+    grid-template-columns: 1fr;
+  }
+}
