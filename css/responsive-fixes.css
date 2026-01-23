@@ -20,6 +20,42 @@
 }
 
 /* =============================================
+   MOBILE/TABLET NAVBAR FIXES
+   ============================================= */
+
+/* Tablet and below (991px): Hide logo text, show icon only */
+@media screen and (max-width: 991px) {
+  /* Fix logo icon - maintain aspect ratio with explicit size */
+  .nav_logo-icon {
+    width: 2rem;
+    min-width: 2rem;
+    height: auto;
+    align-self: center;
+  }
+
+  .nav_logo-icon img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Hide the long brand name text */
+  .nav_logo .paragraph_large {
+    display: none;
+  }
+
+  /* Hide Join button - will be accessible via hamburger menu */
+  .nav_right .button-group {
+    display: none;
+  }
+
+  /* Add breathing room between nav and hero content */
+  header.section {
+    margin-top: 0.5rem;
+  }
+}
+
+/* =============================================
    ALL HERO SECTIONS - Reduce gap below nav
    ============================================= */
 
