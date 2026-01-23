@@ -1,0 +1,60 @@
+/**
+ * MML Europe - Responsive Fixes
+ * Overrides for Webflow CSS variables that don't adjust for smaller screens
+ */
+
+/* =============================================
+   RESPONSIVE TYPOGRAPHY OVERRIDES
+   ============================================= */
+
+/* Tablet breakpoint */
+@media screen and (max-width: 991px) {
+  :root {
+    --_typography---h1-heading--h1-size: 4rem;
+    --_typography---h2-heading--h2-size: 2.2rem;
+    --_typography---h0-heading--h0-size: 5rem;
+    --_sizes---container--container-width: 100%;
+    --_sizes---container--container-padding-horizontal: 1.5rem;
+  }
+}
+
+/* Mobile Landscape breakpoint */
+@media screen and (max-width: 767px) {
+  :root {
+    --_typography---h1-heading--h1-size: 3rem;
+    --_typography---h2-heading--h2-size: 1.8rem;
+    --_typography---h0-heading--h0-size: 3.5rem;
+  }
+}
+
+/* Mobile Portrait breakpoint */
+@media screen and (max-width: 479px) {
+  :root {
+    --_typography---h1-heading--h1-size: 2.2rem;
+    --_typography---h2-heading--h2-size: 1.5rem;
+    --_typography---h0-heading--h0-size: 2.5rem;
+  }
+
+  /* Fix button text overflow */
+  .button {
+    white-space: normal;
+  }
+}
+
+/* =============================================
+   FORM STYLING
+   ============================================= */
+
+/* Style for form submission states */
+.form-submitting .button {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.form-success .w-form-done {
+  display: block !important;
+}
+
+.form-error .w-form-fail {
+  display: block !important;
+}

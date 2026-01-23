@@ -1,0 +1,10 @@
+# Railway deployment configuration for static site with nginx
+
+[phases.setup]
+nixPkgs = ["nginx"]
+
+[phases.build]
+cmds = []
+
+[start]
+cmd = "nginx -c /app/nginx.conf -g 'daemon off;'"
