@@ -4,6 +4,17 @@
  */
 
 /* =============================================
+   EVENT PAGE HERO - Fit text above the fold
+   ============================================= */
+
+/* Desktop: Reduce hero heading size to fit above fold */
+@media screen and (min-width: 992px) {
+  :root {
+    --_typography---h0-heading--h0-size: 5.5rem;
+  }
+}
+
+/* =============================================
    RESPONSIVE TYPOGRAPHY OVERRIDES
    ============================================= */
 
