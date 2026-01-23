@@ -28,13 +28,19 @@ header.section,
 header.section.is-inverse,
 header.section.is-accent-secondary,
 header.section.is-full-screen {
-  padding-top: 0;
+  padding-top: 0 !important;
 }
 
-/* Also remove padding from internal hero content wrappers */
+/* Remove padding from internal hero content wrappers */
 header.section .padding-top_large,
-header.section .hero_front {
-  padding-top: 0;
+header.section .hero_front,
+header.section .hero_front.padding-top_large {
+  padding-top: 0 !important;
+}
+
+/* For full-screen heroes (blog page), align content to top instead of center */
+header.section.is-full-screen .hero-overlay {
+  place-items: start stretch;
 }
 
 /* =============================================
