@@ -4,6 +4,31 @@
  */
 
 /* =============================================
+   STICKY NAV BAR
+   ============================================= */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+}
+
+/* Ensure nav stays above content when scrolling */
+.nav_container {
+  background-color: #fff;
+}
+
+/* =============================================
+   EVENT PAGE HERO - Reduce gap below nav
+   ============================================= */
+
+/* Reduce top padding on dark hero sections (event pages) */
+header.section.is-inverse {
+  padding-top: var(--_sizes---spacing--4x); /* 4rem instead of 8rem */
+}
+
+/* =============================================
    EVENT PAGE HERO - Fit text above the fold
    ============================================= */
 
