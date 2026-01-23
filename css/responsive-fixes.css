@@ -20,11 +20,11 @@
 }
 
 /* =============================================
-   EVENT PAGE HERO - Reduce gap below nav
+   ALL HERO SECTIONS - Reduce gap below nav
    ============================================= */
 
-/* Reduce top padding on dark hero sections (event pages) */
-header.section.is-inverse {
+/* Reduce top padding on all hero sections */
+header.section {
   padding-top: var(--_sizes---spacing--4x); /* 4rem instead of 8rem */
 }
 
