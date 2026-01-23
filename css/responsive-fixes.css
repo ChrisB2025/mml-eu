@@ -23,9 +23,18 @@
    ALL HERO SECTIONS - Reduce gap below nav
    ============================================= */
 
-/* Reduce top padding on all hero sections */
-header.section {
-  padding-top: var(--_sizes---spacing--4x); /* 4rem instead of 8rem */
+/* Remove top padding on all hero section variants */
+header.section,
+header.section.is-inverse,
+header.section.is-accent-secondary,
+header.section.is-full-screen {
+  padding-top: 0;
+}
+
+/* Also remove padding from internal hero content wrappers */
+header.section .padding-top_large,
+header.section .hero_front {
+  padding-top: 0;
 }
 
 /* =============================================
