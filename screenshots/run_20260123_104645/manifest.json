@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-01-23T10:46:45.116466",
+  "screenshots": [
+    {
+      "success": true,
+      "filename": "index_desktop_1440px.png",
+      "filepath": "C:/Dev/Claude/MML EU/screenshots\\run_20260123_104645\\index_desktop_1440px.png",
+      "page": "/index.html",
+      "breakpoint": "desktop",
+      "width": 1440
+    },
+    {
+      "success": true,
+      "filename": "index_tablet_991px.png",
+      "filepath": "C:/Dev/Claude/MML EU/screenshots\\run_20260123_104645\\index_tablet_991px.png",
+      "page": "/index.html",
+      "breakpoint": "tablet",
+      "width": 991
+    },
+    {
+      "success": true,
+      "filename": "index_mobile_479px.png",
+      "filepath": "C:/Dev/Claude/MML EU/screenshots\\run_20260123_104645\\index_mobile_479px.png",
+      "page": "/index.html",
+      "breakpoint": "mobile",
+      "width": 479
+    },
+    {
+      "success": true,
+      "filename": "about_desktop_1440px.png",
+      "filepath": "C:/Dev/Claude/MML EU/screenshots\\run_20260123_104645\\about_desktop_1440px.png",
+      "page": "/about.html",
+      "breakpoint": "desktop",
+      "width": 1440
+    },
+    {
+      "success": true,
+      "filename": "about_tablet_991px.png",
+      "filepath": "C:/Dev/Claude/MML EU/screenshots\\run_20260123_104645\\about_tablet_991px.png",
+      "page": "/about.html",
+      "breakpoint": "tablet",
+      "width": 991
+    },
+    {
+      "success": true,
+      "filename": "about_mobile_479px.png",
+      "filepath": "C:/Dev/Claude/MML EU/screenshots\\run_20260123_104645\\about_mobile_479px.png",
+      "page": "/about.html",
+      "breakpoint": "mobile",
+      "width": 479
+    },
+    {
+      "success": true,
+      "filename": "stockholm-event_desktop_1440px.png",
+      "filepath": "C:/Dev/Claude/MML EU/screenshots\\run_20260123_104645\\stockholm-event_desktop_1440px.png",
+      "page": "/stockholm-event.html",
+      "breakpoint": "desktop",
+      "width": 1440
+    },
+    {
+      "success": true,
+      "filename": "stockholm-event_tablet_991px.png",
+      "filepath": "C:/Dev/Claude/MML EU/screenshots\\run_20260123_104645\\stockholm-event_tablet_991px.png",
+      "page": "/stockholm-event.html",
+      "breakpoint": "tablet",
+      "width": 991
+    },
+    {
+      "success": true,
+      "filename": "stockholm-event_mobile_479px.png",
+      "filepath": "C:/Dev/Claude/MML EU/screenshots\\run_20260123_104645\\stockholm-event_mobile_479px.png",
+      "page": "/stockholm-event.html",
+      "breakpoint": "mobile",
+      "width": 479
+    }
+  ],
+  "total": 9,
+  "successful": 9,
+  "failed": 0,
+  "output_directory": "C:/Dev/Claude/MML EU/screenshots\\run_20260123_104645"
+}
