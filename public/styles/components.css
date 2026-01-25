@@ -1,0 +1,266 @@
+/**
+ * Component Styles
+ * Custom CSS replacing Webflow dependencies
+ */
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+.nav-container {
+  position: relative;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-mobile-btn {
+  display: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+}
+
+/* Mobile menu visible at tablet breakpoint */
+@media screen and (max-width: 991px) {
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--background-primary, #fff);
+    padding: 1rem;
+    z-index: 100;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-mobile-btn {
+    display: flex;
+  }
+}
+
+/* ==========================================================================
+   Dropdown
+   ========================================================================== */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: var(--background-primary, #fff);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.dropdown.open .dropdown-list,
+.dropdown-list.open {
+  display: block;
+}
+
+.dropdown-icon {
+  transition: transform 0.2s ease;
+}
+
+.dropdown.open .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   Tabs
+   ========================================================================== */
+
+.tabs {
+  position: relative;
+}
+
+.tab-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tab-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tab-content {
+  position: relative;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.tab-active {
+  display: block;
+}
+
+/* Current tab state */
+.tab-link.current {
+  /* Active tab styling - inherits from existing theme classes */
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+.form-wrapper {
+  position: relative;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.form-success {
+  display: none;
+  padding: 1rem;
+  background: var(--color-success, #10b981);
+  color: white;
+  border-radius: 0.25rem;
+}
+
+.form-error {
+  display: none;
+  padding: 1rem;
+  background: var(--color-error, #ef4444);
+  color: white;
+  border-radius: 0.25rem;
+}
+
+/* ==========================================================================
+   Layout & Grid
+   ========================================================================== */
+
+.grid {
+  display: grid;
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+.inline-block {
+  display: inline-block;
+}
+
+.list-unstyled {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.rich-text {
+  /* Rich text container for formatted content */
+}
+
+.rich-text p {
+  margin-bottom: 1em;
+}
+
+.rich-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Grid Item Manual - Positioning for 5-column grid
+   ========================================================================== */
+
+/* Grid item manual - base class */
+.grid-item-manual {
+  position: relative;
+}
+
+/* Column span utilities for 5-column grid */
+.col-span-2 {
+  grid-column: span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3;
+}
+
+/* ==========================================================================
+   Hero Layout - Overlapping grid design
+   Image on right (cols 3-5), text card overlays from left (cols 1-4)
+   ========================================================================== */
+
+@media screen and (min-width: 992px) {
+  /* Hero section needs multiple rows for overlap effect */
+  header.section .grid_5-col {
+    grid-template-rows: auto auto auto auto;
+  }
+
+  /* Image: on RIGHT, cols 3-5 */
+  header.section .grid_5-col > .grid-item-manual:first-child {
+    grid-area: 1 / 3 / 5 / 6;
+  }
+
+  /* Text card: overlays from LEFT, cols 1-4 */
+  header.section .grid_5-col > .grid-item-manual:last-child {
+    grid-area: 2 / 1 / 4 / 4;
+    z-index: 1;
+  }
+}
+
+/* ==========================================================================
+   Tab Section - Menu below content
+   ========================================================================== */
+
+/* Push tab menu to appear after content */
+.grid_1-col.tabs .grid_4-col.tab-menu {
+  order: 9999;
+}
+
+/* Tabs content: image spans 3 cols, cards span 2 cols */
+.tabs_content .grid_5-col > .grid-item-manual:first-child {
+  grid-column: span 3;
+}
+
+.tabs_content .grid_5-col > .grid-item-manual:last-child {
+  grid-column: span 2;
+  align-self: stretch;
+}
+
+/* ==========================================================================
+   Mobile: Reset grid positioning
+   ========================================================================== */
+
+@media screen and (max-width: 991px) {
+  header.section .grid_5-col > .grid-item-manual:first-child,
+  header.section .grid_5-col > .grid-item-manual:last-child,
+  .tabs_content .grid_5-col > .grid-item-manual:first-child,
+  .tabs_content .grid_5-col > .grid-item-manual:last-child {
+    grid-column: auto;
+    grid-area: auto;
+  }
+}

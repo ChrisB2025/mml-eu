@@ -1,0 +1,87 @@
+---
+interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = "" } = Astro.props;
+---
+
+<div class="nav">
+  <div data-duration="400" data-animation="default" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-no-scroll="1" class="nav_container nav-container">
+    <div class="nav_left">
+      <a href="/" aria-current={currentPage === 'index' ? 'page' : undefined} class={`nav_logo inline-block ${currentPage === 'index' ? 'current' : ''}`}>
+        <div class="nav_logo-icon"><img src="/images/MML-logo.png" loading="lazy" alt="MML EU Logo"></div>
+        <div data-brand-name="true" class="paragraph_large margin-bottom_none">Modern Money Lab Europe (MML EU)</div>
+      </a>
+    </div>
+    <div class="nav_center">
+      <nav role="navigation" class="nav_menu nav-menu">
+        <ul role="list" class="nav_menu-list list-unstyled">
+          <li class="nav_menu-list-item">
+            <div data-delay="0" data-hover="false" class="nav_dropdown-menu dropdown">
+              <button class="nav_link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                <div>Events</div>
+                <div class="nav_caret dropdown-icon"></div>
+              </button>
+              <nav class="dropdown-list">
+                <div class="mega-nav_dropdown-list-wrapper">
+                  <div class="eyebrow">Upcoming events</div>
+                  <ul role="list" class="mega-nav_list list-unstyled">
+                    <li class="margin-bottom_none">
+                      <a href="/stockholm-event" class="mega-nav_link-item inline-block">
+                        <div class="icon is-medium"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" fill="currentColor">
+                            <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
+                          </svg></div>
+                        <div class="">
+                          <div><strong>Stockholm Conference</strong></div>
+                          <div class="paragraph_small text-color_secondary">MMT in Sweden, June 27, 2026.</div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="margin-bottom_none">
+                      <a href="/brussels-event" class="mega-nav_link-item inline-block">
+                        <div class="icon is-medium"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" fill="currentColor">
+                            <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
+                          </svg></div>
+                        <div class="">
+                          <div><strong>Brussels Conference</strong></div>
+                          <div class="paragraph_small text-color_secondary">MMT in Belgium, June 28-29, 2026.</div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </li>
+          <li class="nav_menu-list-item">
+            <a href="/about" class={`nav_link inline-block ${currentPage === 'about' ? 'current' : ''}`}>
+              <div>About</div>
+            </a>
+          </li>
+          <li class="nav_menu-list-item">
+            <a href="/blog" class={`nav_link inline-block ${currentPage === 'blog' ? 'current' : ''}`}>
+              <div>Blog</div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav_right">
+      <div class="button-group margin-top_none">
+        <a href="https://tally.so/r/Xx4q1L" class="button inline-block">
+          <div class="button_label">Join</div>
+        </a>
+      </div>
+    </div>
+    <button class="nav_mobile-menu-button nav-mobile-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+      <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+          <g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" fill="none" stroke="currentColor" stroke-miterlimit="10">
+            <line x1="1" y1="12" x2="23" y2="12" stroke="currentColor"></line>
+            <line x1="1" y1="5" x2="23" y2="5"></line>
+            <line x1="1" y1="19" x2="23" y2="19"></line>
+          </g>
+        </svg></div>
+    </button>
+  </div>
+</div>

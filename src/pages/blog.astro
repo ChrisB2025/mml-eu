@@ -1,0 +1,262 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Blog - Modern Money Lab Europe" description="Discover the latest articles, research, and event updates on Modern Monetary Theory and its impact across Europe.">
+  <Nav currentPage="blog" />
+
+  <section class="section">
+    <div class="container">
+      <div class="header is-align-center">
+        <div class="eyebrow">Featured insights</div>
+        <h2 class="heading_primary">Explore modern money in action</h2>
+        <div class="rich-text subheading">
+          <p>Discover the latest articles, research, and event updates on Modern Monetary Theory and its impact across Europe.</p>
+        </div>
+      </div>
+      <div class="tabs">
+        <div class="tabs_nav is-align-center tab-menu">
+          <a data-w-tab="Tab 1" class="tab_menu-button text-align_center tab-link current">
+            <div>All</div>
+          </a>
+          <a data-w-tab="Tab 2" class="tab_menu-button text-align_center tab-link">
+            <div>Events</div>
+          </a>
+          <a data-w-tab="Tab 3" class="tab_menu-button text-align_center tab-link">
+            <div>Articles</div>
+          </a>
+          <a data-w-tab="Tab 4" class="tab_menu-button text-align_center tab-link">
+            <div>Research</div>
+          </a>
+        </div>
+        <div class="tabs_content tab-content">
+          <!-- All Tab -->
+          <div data-w-tab="Tab 1" class="tab-pane tab-active">
+            <div class="grid grid_2-col mobile-l-1-col gap-small">
+              <div>
+                <a href="/stockholm-event" class="content-block-link inline-block">
+                  <div class="image-ratio_3x2 margin-bottom_xsmall">
+                    <img width="1216" height="832" alt="Stockholm seminar" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/9bfb8328-d9a0-464d-b7e6-7c6c8ff6dc57.avif" loading="lazy" class="image_cover">
+                  </div>
+                  <div class="tag_group">
+                    <div class="tag margin-bottom_xsmall">Event</div>
+                  </div>
+                  <h3 class="heading_small">Stockholm: MMT Summer Seminar</h3>
+                  <p>Join leading economists and practitioners for a one-day event in Stockholm. Explore MMT fundamentals and current policy debates. June 27, 2026.</p>
+                  <div class="flex_horizontal is-y-center gap-xsmall">
+                    <div class="avatar">
+                      <img width="1024" height="1024" alt="Alex Novak" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/56cfa564-fd5d-4ba5-a46b-f9793e53aaf3.avif" loading="lazy" class="image_cover">
+                    </div>
+                    <div>
+                      <div class="author_name">Alex Novak</div>
+                      <div class="author_info">June 27, 2026</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a href="/brussels-event" class="content-block-link inline-block">
+                  <div class="image-ratio_3x2 margin-bottom_xsmall">
+                    <img width="1216" height="832" alt="Brussels conference" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/7a6c8176-167c-42e1-bf7e-fda9e73574b0.avif" loading="lazy" class="image_cover">
+                  </div>
+                  <div class="tag_group">
+                    <div class="tag margin-bottom_xsmall">Event</div>
+                  </div>
+                  <h3 class="heading_small">Brussels: MMT Conference</h3>
+                  <p>A two-day conference in Brussels featuring presentations, panels, and networking. Connect with MMT experts and peers. June 28-29, 2026.</p>
+                  <div class="flex_horizontal is-y-center gap-xsmall">
+                    <div class="avatar">
+                      <img width="1024" height="1024" alt="Taylor Schmidt" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/77502f70-9b80-47e9-be2d-a458043a6737.avif" loading="lazy" class="image_cover">
+                    </div>
+                    <div>
+                      <div class="author_name">Taylor Schmidt</div>
+                      <div class="author_info">June 28-29, 2026</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="content-block-link inline-block">
+                  <div class="image-ratio_3x2 margin-bottom_xsmall">
+                    <img width="1216" height="832" alt="Eurozone article" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/35641a43-99f6-44c1-933a-15090d035fb4.avif" loading="lazy" class="image_cover">
+                  </div>
+                  <div class="tag_group">
+                    <div class="tag margin-bottom_xsmall">Article</div>
+                  </div>
+                  <h3 class="heading_small">Understanding the eurozone</h3>
+                  <p>How MMT applies to the unique monetary arrangements of the eurozone. Key concepts explained for European audiences.</p>
+                  <div class="flex_horizontal is-y-center gap-xsmall">
+                    <div class="avatar">
+                      <img width="1024" height="1024" alt="Morgan Ellis" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/e52ac594-c066-46ee-b3b0-66bae8399ebf.avif" loading="lazy" class="image_cover">
+                    </div>
+                    <div>
+                      <div class="author_name">Morgan Ellis</div>
+                      <div class="author_info">May 2026</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="content-block-link inline-block">
+                  <div class="image-ratio_3x2 margin-bottom_xsmall">
+                    <img width="1216" height="832" alt="Fiscal myths" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/cf343183-f831-49e3-b6c1-2eb6c556e505.avif" loading="lazy" class="image_cover">
+                  </div>
+                  <div class="tag_group">
+                    <div class="tag margin-bottom_xsmall">Article</div>
+                  </div>
+                  <h3 class="heading_small">Fiscal myths debunked</h3>
+                  <p>A clear look at common misconceptions about government spending, deficits, and public debt in the EU context.</p>
+                  <div class="flex_horizontal is-y-center gap-xsmall">
+                    <div class="avatar">
+                      <img width="1024" height="1024" alt="Jordan Kim" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/a92a33a0-3e1a-4dfc-8dd1-70206432b0ab.avif" loading="lazy" class="image_cover">
+                    </div>
+                    <div>
+                      <div class="author_name">Jordan Kim</div>
+                      <div class="author_info">May 2026</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="content-block-link inline-block">
+                  <div class="image-ratio_3x2 margin-bottom_xsmall">
+                    <img width="1216" height="832" alt="Policy coordination" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/dd3521a2-cf6f-4c05-b4a0-d5504e84ce81.avif" loading="lazy" class="image_cover">
+                  </div>
+                  <div class="tag_group">
+                    <div class="tag margin-bottom_xsmall">Research</div>
+                  </div>
+                  <h3 class="heading_small">Policy coordination in the EU</h3>
+                  <p>Examining fiscal policy coordination and its challenges within the European Union from an MMT perspective.</p>
+                  <div class="flex_horizontal is-y-center gap-xsmall">
+                    <div class="avatar">
+                      <img width="1024" height="1024" alt="Casey Rivera" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/43711cb0-73e4-4ecd-85e7-dc34e38e3bda.avif" loading="lazy" class="image_cover">
+                    </div>
+                    <div>
+                      <div class="author_name">Casey Rivera</div>
+                      <div class="author_info">April 2026</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="content-block-link inline-block">
+                  <div class="image-ratio_3x2 margin-bottom_xsmall">
+                    <img width="1216" height="832" alt="Public spending" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/638b0e0b-607f-4d18-a5ca-b69e4f346744.avif" loading="lazy" class="image_cover">
+                  </div>
+                  <div class="tag_group">
+                    <div class="tag margin-bottom_xsmall">Research</div>
+                  </div>
+                  <h3 class="heading_small">Public spending and employment</h3>
+                  <p>Insights on how public investment can support employment and economic stability in Europe.</p>
+                  <div class="flex_horizontal is-y-center gap-xsmall">
+                    <div class="avatar">
+                      <img width="1024" height="1024" alt="Riley Chen" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/ebe6a0ce-16e6-46e1-a11a-606add6e39bb.avif" loading="lazy" class="image_cover">
+                    </div>
+                    <div>
+                      <div class="author_name">Riley Chen</div>
+                      <div class="author_info">April 2026</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Events Tab -->
+          <div data-w-tab="Tab 2" class="tab-pane">
+            <div class="grid grid_2-col mobile-l-1-col gap-small">
+              <div>
+                <a href="/stockholm-event" class="content-block-link inline-block">
+                  <div class="image-ratio_3x2 margin-bottom_xsmall">
+                    <img width="1216" height="832" alt="Stockholm seminar" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/9bfb8328-d9a0-464d-b7e6-7c6c8ff6dc57.avif" loading="lazy" class="image_cover">
+                  </div>
+                  <div class="tag_group">
+                    <div class="tag margin-bottom_xsmall">Event</div>
+                  </div>
+                  <h3 class="heading_small">Stockholm: MMT Summer Seminar</h3>
+                  <p>Join leading economists and practitioners for a one-day event in Stockholm. June 27, 2026.</p>
+                </a>
+              </div>
+              <div>
+                <a href="/brussels-event" class="content-block-link inline-block">
+                  <div class="image-ratio_3x2 margin-bottom_xsmall">
+                    <img width="1216" height="832" alt="Brussels conference" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/7a6c8176-167c-42e1-bf7e-fda9e73574b0.avif" loading="lazy" class="image_cover">
+                  </div>
+                  <div class="tag_group">
+                    <div class="tag margin-bottom_xsmall">Event</div>
+                  </div>
+                  <h3 class="heading_small">Brussels: MMT Conference</h3>
+                  <p>A two-day conference featuring presentations, panels, and networking. June 28-29, 2026.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Articles Tab -->
+          <div data-w-tab="Tab 3" class="tab-pane">
+            <div class="grid grid_2-col mobile-l-1-col gap-small">
+              <div>
+                <a href="#" class="content-block-link inline-block">
+                  <div class="image-ratio_3x2 margin-bottom_xsmall">
+                    <img width="1216" height="832" alt="Eurozone" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/35641a43-99f6-44c1-933a-15090d035fb4.avif" loading="lazy" class="image_cover">
+                  </div>
+                  <div class="tag_group">
+                    <div class="tag margin-bottom_xsmall">Article</div>
+                  </div>
+                  <h3 class="heading_small">Understanding the eurozone</h3>
+                  <p>How MMT applies to the unique monetary arrangements of the eurozone.</p>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="content-block-link inline-block">
+                  <div class="image-ratio_3x2 margin-bottom_xsmall">
+                    <img width="1216" height="832" alt="Fiscal myths" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/cf343183-f831-49e3-b6c1-2eb6c556e505.avif" loading="lazy" class="image_cover">
+                  </div>
+                  <div class="tag_group">
+                    <div class="tag margin-bottom_xsmall">Article</div>
+                  </div>
+                  <h3 class="heading_small">Fiscal myths debunked</h3>
+                  <p>A clear look at common misconceptions about government spending and deficits.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Research Tab -->
+          <div data-w-tab="Tab 4" class="tab-pane">
+            <div class="grid grid_2-col mobile-l-1-col gap-small">
+              <div>
+                <a href="#" class="content-block-link inline-block">
+                  <div class="image-ratio_3x2 margin-bottom_xsmall">
+                    <img width="1216" height="832" alt="Policy coordination" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/dd3521a2-cf6f-4c05-b4a0-d5504e84ce81.avif" loading="lazy" class="image_cover">
+                  </div>
+                  <div class="tag_group">
+                    <div class="tag margin-bottom_xsmall">Research</div>
+                  </div>
+                  <h3 class="heading_small">Policy coordination in the EU</h3>
+                  <p>Examining fiscal policy coordination from an MMT perspective.</p>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="content-block-link inline-block">
+                  <div class="image-ratio_3x2 margin-bottom_xsmall">
+                    <img width="1216" height="832" alt="Public spending" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/638b0e0b-607f-4d18-a5ca-b69e4f346744.avif" loading="lazy" class="image_cover">
+                  </div>
+                  <div class="tag_group">
+                    <div class="tag margin-bottom_xsmall">Research</div>
+                  </div>
+                  <h3 class="heading_small">Public spending and employment</h3>
+                  <p>Insights on how public investment can support employment in Europe.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

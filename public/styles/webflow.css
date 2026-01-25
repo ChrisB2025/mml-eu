@@ -1,0 +1,20 @@
+/**
+ * Webflow base styles
+ * Essential defaults that Webflow includes in all projects
+ */
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.w-inline-block {
+  max-width: 100%;
+  display: inline-block;
+}
+
+/* Ensure proper box sizing */
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,570 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Modern Money Lab Europe (MML EU)">
+  <Nav currentPage="index" />
+
+  <header class="section is-accent-secondary">
+    <div class="container">
+      <div class="grid grid_5-col tablet-1-col-1-2-3-4-5-6 gap-small">
+        <div class="grid-item-manual">
+          <div class="image-ratio_1x1 height_100percent">
+            <img class="image_cover" src="/images/European-Parliament-1.jpg" width="1216" height="832" alt="European Parliament" sizes="100vw" loading="lazy" srcset="/images/European-Parliament-1-p-500.jpg 500w, /images/European-Parliament-1-p-800.jpg 800w, /images/European-Parliament-1.jpg 1063w">
+          </div>
+        </div>
+        <div class="grid-item-manual">
+          <div class="card on-accent-secondary">
+            <div class="card_body">
+              <div class="header margin-bottom_none">
+                <h1 class="heading_hero">Rethink money. Rethink policy.</h1>
+                <div class="rich-text subheading">
+                  <p>We make Modern Monetary Theory accessible for everyone. Explore clear, evidence-based resources and join our events to understand how economies really work.</p>
+                </div>
+                <div class="button-group">
+                  <div class="ix-link-wrapper">
+                    <a href="#events" class="button btn">Upcoming events</a>
+                  </div>
+                  <div class="ix-link-wrapper">
+                    <a href="/about" class="button is-secondary btn">About us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container is-small">
+      <div class="header is-align-center">
+        <div class="eyebrow">Educational events across Europe</div>
+        <h2 class="heading_primary">Understanding modern money in Europe</h2>
+        <div class="subheading rich-text">
+          <p>Explore how modern monetary systems work and why it matters for Europe's future.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container margin-top_medium">
+      <div class="grid_1-col tabs">
+        <div class="grid_4-col gap-xsmall tab-menu">
+          <a data-w-tab="Tab 1" class="tab_menu-link_transparent-bottom tab-link current">
+            <div class="heading_xsmall">Events</div>
+            <p class="paragraph_small text-color_secondary">Discover upcoming conferences and workshops featuring leading MMT experts.</p>
+          </a>
+          <a data-w-tab="Tab 2" class="tab_menu-link_transparent-bottom tab-link">
+            <div class="heading_xsmall">Resources</div>
+            <p class="paragraph_small text-color_secondary">Access articles, explainers, and videos to deepen your understanding of MMT.</p>
+          </a>
+          <a data-w-tab="Tab 3" class="tab_menu-link_transparent-bottom tab-link">
+            <div class="heading_xsmall">Reports</div>
+            <p class="paragraph_small text-color_secondary">See the latest research on European fiscal policy and monetary systems.</p>
+          </a>
+          <a data-w-tab="Tab 4" class="tab_menu-link_transparent-bottom tab-link">
+            <div class="heading_xsmall">Community</div>
+            <p class="paragraph_small text-color_secondary">Connect with academics, professionals, and advocates across Europe.</p>
+          </a>
+        </div>
+        <div class="tabs_content margin-bottom_small tab-content">
+          <div data-w-tab="Tab 1" class="tab-pane tab-active">
+            <div class="grid grid_5-col gap-xsmall">
+              <div class="grid-item-manual">
+                <div class="image-ratio_3x2">
+                  <img width="1216" height="832" alt="Conference image" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/d35ef877-f88d-4626-888b-3da44c756954.avif" loading="lazy" class="image_cover">
+                </div>
+              </div>
+              <div class="grid-item-manual flex_horizontal">
+                <div class="card">
+                  <div class="card_body flex_vertical">
+                    <div>
+                      <div class="heading_small">Stockholm Event: June 27</div>
+                      <p class="paragraph_small">Join our one-day event in Sweden for presentations and discussions with MMT scholars.</p>
+                      <div class="margin_top-auto padding-top_xsmall">
+                        <div class="ix-link-wrapper">
+                          <a href="https://tally.so/r/q4RPog" class="button is-secondary btn">Register</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="padding_small"></div>
+                    <div>
+                      <div class="heading_small">Brussels Event: June 28</div>
+                      <p class="paragraph_small">Participate in our engaging event in Belgium, featuring interactive sessions with leading MMT experts.</p>
+                      <div class="margin_top-auto padding-top_xsmall">
+                        <div class="ix-link-wrapper">
+                          <a href="https://tally.so/r/q4RPog" class="button is-secondary btn">Register</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-w-tab="Tab 2" class="tab-pane">
+            <div class="grid grid_5-col gap-xsmall">
+              <div class="grid-item-manual">
+                <div class="image-ratio_3x2">
+                  <img width="1216" height="832" alt="Resources" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/b36f41c4-b7ab-464a-a013-5fb43b75194b.avif" loading="lazy" class="image_cover">
+                </div>
+              </div>
+              <div class="grid-item-manual flex_horizontal">
+                <div class="card">
+                  <div class="card_body flex_vertical">
+                    <div class="heading_small">Resources</div>
+                    <p class="paragraph_small">Explore our comprehensive library of MMT resources, including articles, videos, and expert analyses.</p>
+                    <div class="margin_top-auto padding-top_xsmall">
+                      <div class="ix-link-wrapper">
+                        <a href="/blog" class="button is-secondary btn">Read more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-w-tab="Tab 3" class="tab-pane">
+            <div class="grid grid_5-col gap-xsmall">
+              <div class="grid-item-manual">
+                <div class="image-ratio_3x2">
+                  <img width="1216" height="832" alt="Reports" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/a5a79b56-473d-42fd-84aa-6de741b637c5.avif" loading="lazy" class="image_cover">
+                </div>
+              </div>
+              <div class="grid-item-manual flex_horizontal">
+                <div class="card">
+                  <div class="card_body flex_vertical">
+                    <div class="heading_small">Reports</div>
+                    <p class="paragraph_small">Our reports provide in-depth analyses of MMT principles and their impact on European economies.</p>
+                    <div class="margin_top-auto padding-top_xsmall">
+                      <div class="ix-link-wrapper">
+                        <a href="/blog" class="button is-secondary btn">Read more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-w-tab="Tab 4" class="tab-pane">
+            <div class="grid grid_5-col gap-xsmall">
+              <div class="grid-item-manual">
+                <div class="image-ratio_3x2">
+                  <img width="1216" height="832" alt="Community" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/613530dd-3376-43c4-91a9-abd671c72022.avif" loading="lazy" class="image_cover">
+                </div>
+              </div>
+              <div class="grid-item-manual flex_horizontal">
+                <div class="card">
+                  <div class="card_body flex_vertical">
+                    <div class="heading_small">Community</div>
+                    <p class="paragraph_small">Join the MML community to collaborate with like-minded individuals and drive impactful change in monetary policy.</p>
+                    <div class="margin_top-auto padding-top_xsmall">
+                      <div class="ix-link-wrapper">
+                        <a href="https://tally.so/r/Xx4q1L" class="button is-secondary btn">Join us</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="header is-align-center">
+        <div class="eyebrow">Latest updates & insights</div>
+        <h2 class="heading_primary">Explore economic ideas for Europe</h2>
+      </div>
+      <div class="grid grid_4-col gap-small">
+        <div class="ix-link-wrapper">
+          <a href="/stockholm-event" class="card-link flex_vertical inline-block">
+            <div class="image-ratio_3x2 radius_bottom-none">
+              <img width="1216" height="832" alt="Stockholm event" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/131991af-e51b-4783-aab5-aff34125e59d.avif" loading="lazy" class="image_cover">
+            </div>
+            <div class="card_body is-small">
+              <div class="tag_group margin-bottom_xsmall">
+                <div class="tag">Events</div>
+              </div>
+              <h3 class="heading_small margin-bottom_xxsmall">Stockholm: MMT Summer Seminar</h3>
+              <p>Join leading economists for a one-day event on Modern Monetary Theory in Sweden. Presentations, panels, and networking opportunities.</p>
+            </div>
+          </a>
+        </div>
+        <div class="ix-link-wrapper">
+          <a href="/brussels-event" class="card-link flex_vertical inline-block">
+            <div class="image-ratio_3x2 radius_bottom-none">
+              <img width="1216" height="832" alt="Brussels event" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/e3050f51-6998-47f8-8d6f-315c3557a28c.avif" loading="lazy" class="image_cover">
+            </div>
+            <div class="card_body is-small">
+              <div class="tag_group margin-bottom_xsmall">
+                <div class="tag">Events</div>
+              </div>
+              <h3 class="heading_small margin-bottom_xxsmall">Brussels: MMT Conference</h3>
+              <p>A two-day conference featuring MMT scholars and policy experts. In-depth sessions on European fiscal policy and monetary systems.</p>
+            </div>
+          </a>
+        </div>
+        <div class="ix-link-wrapper">
+          <a href="/blog" class="card-link flex_vertical inline-block">
+            <div class="image-ratio_3x2 radius_bottom-none">
+              <img width="1216" height="832" alt="MMT article" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/d7a305e9-8021-4651-ad20-8ec9e15efe9b.avif" loading="lazy" class="image_cover">
+            </div>
+            <div class="card_body is-small">
+              <div class="tag_group margin-bottom_xsmall">
+                <div class="tag">Article</div>
+              </div>
+              <h3 class="heading_small margin-bottom_xxsmall">Understanding Modern Monetary Theory</h3>
+              <p>A clear introduction to MMT fundamentals and how they apply to European economies. Accessible for all backgrounds.</p>
+            </div>
+          </a>
+        </div>
+        <div class="ix-link-wrapper">
+          <a href="/blog" class="card-link flex_vertical inline-block">
+            <div class="image-ratio_3x2 radius_bottom-none">
+              <img width="1216" height="832" alt="Fiscal policy article" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/d35ef877-f88d-4626-888b-3da44c756954.avif" loading="lazy" class="image_cover">
+            </div>
+            <div class="card_body is-small">
+              <div class="tag_group margin-bottom_xsmall">
+                <div class="tag">Article</div>
+              </div>
+              <h3 class="heading_small margin-bottom_xxsmall">Fiscal Policy in the Eurozone</h3>
+              <p>Explore the unique challenges and opportunities of fiscal coordination within the EU's monetary framework.</p>
+            </div>
+          </a>
+        </div>
+        <div class="ix-link-wrapper">
+          <a href="/blog" class="card-link flex_vertical inline-block">
+            <div class="image-ratio_3x2 radius_bottom-none">
+              <img width="1216" height="832" alt="Central banking explainer" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/a5a79b56-473d-42fd-84aa-6de741b637c5.avif" loading="lazy" class="image_cover">
+            </div>
+            <div class="card_body is-small">
+              <div class="tag_group margin-bottom_xsmall">
+                <div class="tag">Explainer</div>
+              </div>
+              <h3 class="heading_small margin-bottom_xxsmall">How Central Banks Really Work</h3>
+              <p>A clear guide to understanding the role of central banks in modern monetary systems.</p>
+            </div>
+          </a>
+        </div>
+        <div class="ix-link-wrapper">
+          <a href="/blog" class="card-link flex_vertical inline-block">
+            <div class="image-ratio_3x2 radius_bottom-none">
+              <img width="1216" height="832" alt="Government spending article" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/b36f41c4-b7ab-464a-a013-5fb43b75194b.avif" loading="lazy" class="image_cover">
+            </div>
+            <div class="card_body is-small">
+              <div class="tag_group margin-bottom_xsmall">
+                <div class="tag">Explainer</div>
+              </div>
+              <h3 class="heading_small margin-bottom_xxsmall">Government Spending Explained</h3>
+              <p>Learn why government spending works differently than household budgets and what that means for policy.</p>
+            </div>
+          </a>
+        </div>
+        <div class="ix-link-wrapper">
+          <a href="/about" class="card-link flex_vertical inline-block">
+            <div class="image-ratio_3x2 radius_bottom-none">
+              <img width="1216" height="832" alt="Team profile" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/613530dd-3376-43c4-91a9-abd671c72022.avif" loading="lazy" class="image_cover">
+            </div>
+            <div class="card_body is-small">
+              <div class="tag_group margin-bottom_xsmall">
+                <div class="tag">Profile</div>
+              </div>
+              <h3 class="heading_small margin-bottom_xxsmall">Meet Our Research Team</h3>
+              <p>Get to know the economists and researchers behind Modern Money Lab Europe.</p>
+            </div>
+          </a>
+        </div>
+        <div class="ix-link-wrapper">
+          <a href="/about" class="card-link flex_vertical inline-block">
+            <div class="image-ratio_3x2 radius_bottom-none">
+              <img width="1216" height="832" alt="Community profile" src="https://webflow-prod-assets.s3.amazonaws.com/image-generation-assets/131991af-e51b-4783-aab5-aff34125e59d.avif" loading="lazy" class="image_cover">
+            </div>
+            <div class="card_body is-small">
+              <div class="tag_group margin-bottom_xsmall">
+                <div class="tag">Profile</div>
+              </div>
+              <h3 class="heading_small margin-bottom_xxsmall">Our Growing Community</h3>
+              <p>Discover how our network of economists, students, and policymakers is expanding across Europe.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section is-secondary">
+    <div class="container">
+      <div class="header is-align-center">
+        <p class="eyebrow">Voices from our European community</p>
+        <h2 class="heading_primary">Real impact. Genuine perspectives.</h2>
+      </div>
+      <div class="grid grid_3-col tablet-1-col gap-xsmall">
+        <div class="grid-item-manual flex_horizontal">
+          <div class="card on-secondary">
+            <div class="card_body">
+              <div class="flex_horizontal is-y-center gap-xsmall margin-bottom_xsmall">
+                <div class="avatar">
+                  <img width="64" height="64" alt="Alex Marin" src="/images/c6086fd2-61b1-4ade-80e6-8c116e742052.avif" loading="lazy" class="image_cover">
+                </div>
+                <div>
+                  <div class="author_name">Alex Marin</div>
+                  <div class="author_info">Policy Analyst</div>
+                </div>
+              </div>
+              <p class="quote is-small">The workshops offered practical, evidence-based insights into monetary systems. I left with a clearer understanding of MMT's relevance for Europe.</p>
+              <div class="ratio_anamorphic">
+                <img width="483" height="330" alt="Workshop session" src="/images/88e6ff3a-6b33-491c-8a6a-1befc69dc241.avif" loading="lazy" class="image_cover">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item-manual flex_horizontal">
+          <div class="card on-secondary">
+            <div class="card_body is-y-center">
+              <div class="flex_horizontal is-y-center gap-xsmall margin-bottom_xsmall">
+                <div class="avatar">
+                  <img width="64" height="64" alt="Taylor Singh" src="/images/f08fd756-f173-44b8-a4e0-496d33eb66a0.avif" loading="lazy" class="image_cover">
+                </div>
+                <div>
+                  <div class="author_name">Taylor Singh</div>
+                  <div class="author_info">Economics Lecturer</div>
+                </div>
+              </div>
+              <div class="flex_vertical is-y-center flex-child_expand">
+                <p class="quote is-small">The event brought together leading experts and made complex topics accessible. Highly recommended for anyone interested in economic policy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item-manual flex_horizontal">
+          <div class="card on-secondary">
+            <div class="card_body is-y-center">
+              <div class="flex_horizontal is-y-center gap-xsmall margin-bottom_xsmall">
+                <div class="avatar">
+                  <img width="64" height="64" alt="Morgan Ellis" src="/images/6006ac6d-5d1d-4385-b405-3e1be079c78b.avif" loading="lazy" class="image_cover">
+                </div>
+                <div>
+                  <div class="author_name">Morgan Ellis</div>
+                  <div class="author_info">Public Affairs Consultant</div>
+                </div>
+              </div>
+              <div class="flex_vertical is-y-center flex-child_expand">
+                <p class="quote is-small">A well-organized conference with engaging speakers. The discussions were balanced and informative, making MMT concepts easy to grasp.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item-manual flex_horizontal">
+          <div class="card on-secondary">
+            <div class="card_body is-y-center">
+              <div class="flex_horizontal is-y-center gap-xsmall margin-bottom_xsmall">
+                <div class="avatar">
+                  <img width="64" height="64" alt="Jordan Petrov" src="/images/bb166643-c525-4bc1-877a-15b0dac1fe51.avif" loading="lazy" class="image_cover">
+                </div>
+                <div>
+                  <div class="author_name">Jordan Petrov</div>
+                  <div class="author_info">Graduate Student</div>
+                </div>
+              </div>
+              <div class="flex_vertical is-y-center flex-child_expand">
+                <p class="quote is-small">Attending the summer conference helped me connect with others interested in economic reform. The content was rigorous yet approachable.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item-manual flex_horizontal">
+          <div class="card on-secondary">
+            <div class="card_body is-y-center">
+              <div class="flex_horizontal is-y-center gap-xsmall margin-bottom_xsmall">
+                <div class="avatar">
+                  <img width="64" height="64" alt="Sofia Lindgren" src="/images/c6086fd2-61b1-4ade-80e6-8c116e742052.avif" loading="lazy" class="image_cover">
+                </div>
+                <div>
+                  <div class="author_name">Sofia Lindgren</div>
+                  <div class="author_info">Financial Journalist</div>
+                </div>
+              </div>
+              <div class="flex_vertical is-y-center flex-child_expand">
+                <p class="quote is-small">As a journalist covering economic policy, this event gave me the tools to explain complex monetary concepts to a general audience.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item-manual flex_horizontal">
+          <div class="card on-secondary">
+            <div class="card_body is-y-center">
+              <div class="flex_horizontal is-y-center gap-xsmall margin-bottom_xsmall">
+                <div class="avatar">
+                  <img width="64" height="64" alt="Marcus Hoffmann" src="/images/f08fd756-f173-44b8-a4e0-496d33eb66a0.avif" loading="lazy" class="image_cover">
+                </div>
+                <div>
+                  <div class="author_name">Marcus Hoffmann</div>
+                  <div class="author_info">NGO Director</div>
+                </div>
+              </div>
+              <div class="flex_vertical is-y-center flex-child_expand">
+                <p class="quote is-small">The practical policy discussions were invaluable. I now have a clearer framework for advocating economic reforms in our campaigns.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="events" class="section">
+    <div class="container">
+      <div class="header is-align-center">
+        <div class="eyebrow">Event calendar</div>
+        <h2 class="heading_primary">Upcoming events across Europe</h2>
+        <div class="rich-text subheading">
+          <p>Discover conferences and workshops focused on Modern Monetary Theory. Connect with experts, expand your knowledge, and join the conversation on economic policy.</p>
+        </div>
+      </div>
+      <div class="grid grid_2-col gap-small">
+        <div class="ix-link-wrapper">
+          <a href="https://tally.so/r/q4RPog" class="card-link height_100percent inline-block">
+            <div class="image-ratio_3x2 position_relative flex_horizontal is-x-right radius_bottom-none">
+              <img width="539" height="368" alt="Stockholm event" src="/images/45d7c020-60db-4d5e-837d-6e1a2d5204da.avif" loading="lazy" class="image_cover">
+              <div class="position_absolute padding_xsmall">
+                <div class="card">
+                  <div class="padding_xsmall text-align_center">
+                    <div class="paragraph_small margin-bottom_none">Fri</div>
+                    <div class="paragraph_xxlarge margin-bottom_none"><strong>27</strong></div>
+                    <div class="paragraph_small margin-bottom_none">Jun 2026</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card_body">
+              <div class="tag_group margin-bottom_xsmall">
+                <div class="tag"><div>Conference</div></div>
+              </div>
+              <h4 class="heading_tertiary">Stockholm: MMT in action</h4>
+              <div class="label">Stockholm, Sweden</div>
+              <p>Join economists and practitioners for a day of talks and panels on MMT's role in European policy. Open to all interested in economic systems.</p>
+              <div class="margin_top-auto padding-top_xsmall">
+                <div class="text-button"><div>Register</div></div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="ix-link-wrapper">
+          <a href="https://tally.so/r/q4RPog" class="card-link height_100percent inline-block">
+            <div class="image-ratio_3x2 position_relative flex_horizontal is-x-right radius_bottom-none">
+              <img width="539" height="368" alt="Brussels event" src="/images/13d8ffa5-d841-4201-910d-49215fa562d5.avif" loading="lazy" class="image_cover">
+              <div class="position_absolute padding_xsmall">
+                <div class="card">
+                  <div class="padding_xsmall text-align_center">
+                    <div class="paragraph_small margin-bottom_none">Sat</div>
+                    <div class="paragraph_xxlarge margin-bottom_none"><strong>28</strong></div>
+                    <div class="paragraph_small margin-bottom_none">Jun 2026</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card_body">
+              <div class="tag_group margin-bottom_xsmall">
+                <div class="tag"><div>Workshop</div></div>
+              </div>
+              <h4 class="heading_tertiary">Brussels: Summer MMT forum</h4>
+              <div class="label">Brussels, Belgium</div>
+              <p>Two days of presentations, workshops, and networking for academics, policymakers, and the public. All backgrounds welcome.</p>
+              <div class="margin_top-auto padding-top_xsmall">
+                <div class="text-button"><div>Register</div></div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="header">
+        <h2 class="heading_primary">Frequently asked questions</h2>
+        <div class="rich-text subheading">
+          <p>Find clear answers to common questions about our mission, events, and Modern Monetary Theory.</p>
+        </div>
+      </div>
+      <ul role="list" class="list-divided gap-small list-unstyled">
+        <li>
+          <div class="grid grid_2-col gap-small">
+            <div class="heading_small">What is Modern Monetary Theory?</div>
+            <div class="rich-text paragraph_large rich-text">
+              <p>Modern Monetary Theory (MMT) is a macroeconomic framework that explains how sovereign governments with their own currency manage fiscal and monetary policy. It highlights the mechanics of money creation, public spending, and taxation.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="grid grid_2-col gap-small">
+            <div class="heading_small">Who can benefit from your events?</div>
+            <div class="rich-text paragraph_large rich-text">
+              <p>Our events are designed for the general public, students, academics, journalists, policymakers, and anyone interested in understanding how modern economies function.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="grid grid_2-col gap-small">
+            <div class="heading_small">Are your resources accessible to beginners?</div>
+            <div class="rich-text paragraph_large rich-text">
+              <p>Yes. We create educational materials that break down complex economic concepts into clear, understandable language for all experience levels.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="grid grid_2-col gap-small">
+            <div class="heading_small">How can I get involved or stay updated?</div>
+            <div class="rich-text paragraph_large rich-text">
+              <p>You can join our events, follow us on social media, or subscribe to our newsletter for updates on new resources and upcoming activities.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="header is-align-center">
+        <div class="eyebrow">Get in touch</div>
+        <h2 class="heading_primary">Connect with our team today</h2>
+        <div class="subheading rich-text">
+          <p>Questions about events or MMT? Complete the form and our team will respond promptly.</p>
+        </div>
+      </div>
+      <ul role="list" class="grid_2-col gap-medium list-unstyled">
+        <li class="content-block is-align-center">
+          <div class="icon is-large is-background margin-bottom_xsmall">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
+              <path d="M5.25 6.75H18.75V17.25H5.25V6.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+              <path d="M5.25 6.75L12 12L18.75 6.75" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <h3 class="heading_small">Email</h3>
+          <p class="text-color_secondary">General inquiries and event details.</p>
+          <a href="mailto:info@modernmoneylab.eu" class="text-link is-secondary">info@modernmoneylab.eu</a>
+        </li>
+        <li class="content-block is-align-center">
+          <div class="icon is-large is-background margin-bottom_xsmall">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
+              <path d="M12.5 18.25C16.2279 18.25 19.25 15.2279 19.25 11.5C19.25 7.77208 16.2279 4.75 12.5 4.75C8.77208 4.75 5.75 7.77208 5.75 11.5C5.75 12.6007 6.01345 13.6398 6.48072 14.5578L5 19L9.71819 17.6519C10.5664 18.0361 11.5082 18.25 12.5 18.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <h3 class="heading_small">Phone</h3>
+          <p class="text-color_secondary">Weekdays, 8:00-17:00 CET.</p>
+          <a href="tel:+0000000000" class="text-link is-secondary">+0 (000) 000-0000</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

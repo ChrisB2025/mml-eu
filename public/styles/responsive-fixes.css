@@ -1,0 +1,331 @@
+/**
+ * MML Europe - Responsive Fixes
+ * Overrides for Webflow CSS variables that don't adjust for smaller screens
+ */
+
+/* =============================================
+   NAVBAR LOGO - Constrain icon to nav height
+   ============================================= */
+
+/* Force the logo icon container to match nav height */
+.nav_logo-icon {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  max-width: 2.5rem !important;
+  max-height: 2.5rem !important;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Force the image to fill the container */
+.nav_logo-icon img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 2.5rem !important;
+  max-height: 2.5rem !important;
+  object-fit: contain;
+}
+
+/* Force nav_logo to use flex layout (overrides .inline-block class from components.css) */
+.nav_logo {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* =============================================
+   STICKY NAV BAR
+   ============================================= */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+}
+
+/* Ensure nav stays above content when scrolling */
+.nav_container {
+  background-color: #fff;
+  position: relative;
+  z-index: 100;
+}
+
+/* =============================================
+   MOBILE/TABLET NAVBAR FIXES
+   ============================================= */
+
+/* Tablet and below (991px): Hide logo text, show icon only */
+@media screen and (max-width: 991px) {
+  /* Fix logo icon - maintain aspect ratio with explicit size */
+  .nav_logo-icon {
+    width: 2rem;
+    min-width: 2rem;
+    height: auto;
+    align-self: center;
+  }
+
+  .nav_logo-icon img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Hide the long brand name text */
+  .nav_logo .paragraph_large {
+    display: none;
+  }
+
+  /* Hide Join button - will be accessible via hamburger menu */
+  .nav_right .button-group {
+    display: none;
+  }
+
+  /* Add breathing room between nav and hero content */
+  header.section {
+    margin-top: 0.5rem;
+  }
+}
+
+/* =============================================
+   ALL HERO SECTIONS - Reduce gap below nav
+   ============================================= */
+
+/* Remove top padding on all hero section variants */
+header.section,
+header.section.is-inverse,
+header.section.is-accent-secondary,
+header.section.is-full-screen {
+  padding-top: 0 !important;
+}
+
+/* Remove padding from internal hero content wrappers */
+header.section .padding-top_large,
+header.section .hero_front,
+header.section .hero_front.padding-top_large {
+  padding-top: 0 !important;
+}
+
+/* Blog page: reduce full-screen hero height on desktop so text is above fold */
+@media screen and (min-width: 992px) {
+  header.section.is-full-screen {
+    min-height: 70vh;
+  }
+}
+
+/* =============================================
+   EVENT PAGE HERO - Fit text above the fold
+   ============================================= */
+
+/* Desktop: Reduce hero heading size to fit above fold */
+@media screen and (min-width: 992px) {
+  :root {
+    --_typography---h0-heading--h0-size: 5.5rem;
+  }
+}
+
+/* =============================================
+   RESPONSIVE TYPOGRAPHY OVERRIDES
+   ============================================= */
+
+/* Tablet breakpoint */
+@media screen and (max-width: 991px) {
+  :root {
+    --_typography---h1-heading--h1-size: 4rem;
+    --_typography---h2-heading--h2-size: 2.2rem;
+    --_typography---h0-heading--h0-size: 5rem;
+    --_sizes---container--container-width: 100%;
+    --_sizes---container--container-padding-horizontal: 1.5rem;
+  }
+}
+
+/* Mobile Landscape breakpoint */
+@media screen and (max-width: 767px) {
+  :root {
+    --_typography---h1-heading--h1-size: 3rem;
+    --_typography---h2-heading--h2-size: 1.8rem;
+    --_typography---h0-heading--h0-size: 3.5rem;
+  }
+}
+
+/* Mobile Portrait breakpoint */
+@media screen and (max-width: 479px) {
+  :root {
+    --_typography---h1-heading--h1-size: 2.2rem;
+    --_typography---h2-heading--h2-size: 1.5rem;
+    --_typography---h0-heading--h0-size: 2.5rem;
+  }
+
+  /* Fix button text overflow */
+  .button {
+    white-space: normal;
+  }
+}
+
+/* =============================================
+   FORM STYLING
+   ============================================= */
+
+/* Style for form submission states */
+.form-submitting .button {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.form-success .w-form-done {
+  display: block !important;
+}
+
+.form-error .w-form-fail {
+  display: block !important;
+}
+
+/* =============================================
+   CAROUSEL GRID FIX - Side-by-side layout
+   ============================================= */
+
+/* Desktop: Make grid_5-col actually show 5 columns */
+@media screen and (min-width: 992px) {
+  .grid_5-col {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Tablet: Stack vertically (single column) */
+@media screen and (max-width: 991px) {
+  .grid_5-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================
+   TAB BUTTONS - Single Horizontal Row
+   ============================================= */
+
+/* Tab menu always 4 columns in a row */
+.tabs .grid_4-col.tab-menu {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (max-width: 991px) {
+  .tabs .grid_4-col.tab-menu {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .tabs .grid_4-col.tab-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: var(--_sizes---gap--xs-gap);
+  }
+}
+
+/* =============================================
+   TESTIMONIALS BENTO LAYOUT ("Real Impact")
+   ============================================= */
+
+/* Testimonials bento layout */
+.section.is-secondary .grid_3-col.tablet-1-col {
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Row 1: Card 1 large left, Cards 2-3 stacked right */
+.section.is-secondary .grid_3-col.tablet-1-col > .grid-item-manual:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+.section.is-secondary .grid_3-col.tablet-1-col > .grid-item-manual:nth-child(2) {
+  grid-column: 2 / 4;
+  grid-row: 1;
+}
+.section.is-secondary .grid_3-col.tablet-1-col > .grid-item-manual:nth-child(3) {
+  grid-column: 2 / 4;
+  grid-row: 2;
+}
+
+/* Row 2: Cards 4-5 stacked left, Card 6 large right */
+.section.is-secondary .grid_3-col.tablet-1-col > .grid-item-manual:nth-child(4) {
+  grid-column: 1 / 3;
+  grid-row: 3;
+}
+.section.is-secondary .grid_3-col.tablet-1-col > .grid-item-manual:nth-child(5) {
+  grid-column: 1 / 3;
+  grid-row: 4;
+}
+.section.is-secondary .grid_3-col.tablet-1-col > .grid-item-manual:nth-child(6) {
+  grid-column: 3;
+  grid-row: 3 / 5;
+}
+
+@media screen and (max-width: 991px) {
+  .section.is-secondary .grid_3-col.tablet-1-col > .grid-item-manual {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+/* =============================================
+   NAVBAR DROPDOWN - Tighter Layout
+   ============================================= */
+
+/* Navbar dropdown - tighter */
+.mega-nav_dropdown-list-wrapper {
+  padding: 1.5rem;
+  width: auto;
+}
+
+.nav_dropdown-menu .dropdown-list {
+  min-width: 280px;
+  width: auto;
+}
+
+/* =============================================
+   ABOUT PAGE - Team Section
+   ============================================= */
+
+/* Team section: cards span 2 columns */
+#team .grid_3-col > .grid-item-manual {
+  grid-column: span 2;
+}
+
+@media screen and (max-width: 991px) {
+  #team .grid_3-col > .grid-item-manual {
+    grid-column: auto;
+  }
+}
+
+/* =============================================
+   HOMEPAGE HERO - Overlapping Grid Layout
+   ============================================= */
+
+/* Desktop: Position hero grid items to match Webflow layout */
+@media screen and (min-width: 992px) {
+  /* Target the homepage hero section grid */
+  header.section.is-accent-secondary > .container > .grid_5-col {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, auto);
+  }
+
+  /* Image: spans columns 3-6 (right side), all 4 rows */
+  header.section.is-accent-secondary > .container > .grid_5-col > .grid-item-manual:first-child {
+    grid-area: 1 / 3 / 5 / 6;
+  }
+
+  /* Card: spans columns 1-4 (left side, overlapping), rows 2-4 */
+  header.section.is-accent-secondary > .container > .grid_5-col > .grid-item-manual:last-child {
+    grid-area: 2 / 1 / 4 / 4;
+    z-index: 1;
+  }
+}
+
+/* Tablet and below: Stack vertically */
+@media screen and (max-width: 991px) {
+  header.section.is-accent-secondary > .container > .grid_5-col > .grid-item-manual {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
