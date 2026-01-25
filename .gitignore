@@ -16,3 +16,13 @@ __pycache__/
 
 # Test results
 *_results.json
+
+# Node.js
+node_modules/
+
+# Astro build output
+dist/
+.astro/
+
+# Misc
+nul
