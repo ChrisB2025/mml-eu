@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MML EU — Board Member Declaration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #000;
+    --muted: #000000b3;
+    --border: #0000001a;
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --accent: #1657e8;
+    --accent-hover: #4d7fee;
+    --accent-light: rgba(22,87,232,0.08);
+    --accent-dark: #021e5f;
+    --success: #2d6a4f;
+    --error: #c0392b;
+    --radius-card: 1rem;
+    --radius-input: 0.5rem;
+    --radius-btn: 0.75rem;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* ── Page header (dark hero) ── */
+  .page-header {
+    background: var(--accent-dark);
+    color: #fff;
+    padding: 64px 20px 56px;
+    margin-bottom: 0;
+  }
+
+  .page-header-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 32px;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .logo img {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+  }
+
+  .logo span {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .org-label {
+    font-size: 0.71rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 16px;
+  }
+
+  .page-header h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.83rem;
+    font-weight: 500;
+    line-height: 1.04em;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* ── Content area ── */
+  .content-area {
+    padding: 48px 20px 80px;
+  }
+
+  .notice {
+    max-width: 680px;
+    margin: 0 auto 36px;
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 0 var(--radius-input) var(--radius-input) 0;
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  form {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: 36px;
+    margin-bottom: 24px;
+  }
+
+  .section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.41rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .field-group {
+    display: grid;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+
+  .field-group.cols-2 { grid-template-columns: 1fr 1fr; }
+  .field-group.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .field-group.cols-auto { grid-template-columns: 80px 1fr 2fr; }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  label {
+    font-size: 0.71rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  label .required {
+    color: var(--error);
+    margin-left: 2px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-input);
+    padding: 12px 16px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    width: 100%;
+    appearance: none;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(22,87,232,0.1);
+    background: #fff;
+  }
+
+  input[type="text"].is-error,
+  input[type="email"].is-error,
+  select.is-error {
+    border-color: var(--error);
+    box-shadow: 0 0 0 2px rgba(192,57,43,0.12);
+  }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23000000b3' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+    cursor: pointer;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 20px;
+    padding-top: 4px;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
+  .radio-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .radio-group.is-error {
+    outline: 2px solid var(--error);
+    border-radius: var(--radius-input);
+    outline-offset: 4px;
+  }
+
+  .field-hint {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .address-note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .submit-area {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .submit-note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  button[type="submit"] {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background: var(--accent);
+    border: none;
+    border-radius: var(--radius-btn);
+    padding: 1em 1.5em;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    letter-spacing: -0.01em;
+  }
+
+  button[type="submit"]:hover { background: var(--accent-hover); }
+  button[type="submit"]:active { transform: scale(0.99); }
+  button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* ── Success screen ── */
+  #success-screen {
+    display: none;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .success-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: 48px 36px;
+    text-align: center;
+  }
+
+  .success-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(45,106,79,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 24px;
+    color: var(--success);
+  }
+
+  .success-card h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.41rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .success-card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .data-summary {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-input);
+    padding: 20px 24px;
+    text-align: left;
+    font-size: 0.82rem;
+    line-height: 1.9;
+    color: var(--ink);
+    margin-bottom: 24px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: 'Instrument Sans', sans-serif;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #fff;
+    background: var(--accent);
+    border: none;
+    border-radius: var(--radius-btn);
+    padding: 0.85em 1.5em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.15s;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-primary:hover { background: var(--accent-hover); }
+
+  .btn-secondary {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-btn);
+    padding: 0.85em 1.5em;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .copy-feedback {
+    font-size: 0.75rem;
+    color: var(--success);
+    display: none;
+    margin-top: 8px;
+  }
+
+  .save-status {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  .save-status.is-success { color: var(--success); }
+  .save-status.is-error { color: var(--error); }
+
+  /* ── Footer ── */
+  .page-footer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 600px) {
+    .page-header { padding: 40px 20px 36px; }
+    .page-header h1 { font-size: 2rem; }
+    .card { padding: 24px 20px; }
+    .field-group.cols-2,
+    .field-group.cols-3,
+    .field-group.cols-auto {
+      grid-template-columns: 1fr;
+    }
+    .success-card { padding: 32px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <a href="https://modernmoneylab.eu" class="logo" target="_blank" rel="noopener">
+      <img src="https://modernmoneylab.eu/images/MML-logo.png" alt="MML EU">
+      <span>Modern Money Lab Europe</span>
+    </a>
+    <div class="org-label">Confidential</div>
+    <h1>Board Member Declaration</h1>
+    <p>Please complete this form with your personal details. Your information will be submitted directly to the administrator and used solely to register MML Europe as a French association under the law of 1 July 1901.</p>
+  </div>
+</header>
+
+<div class="content-area">
+
+<div class="notice">
+  Each person completes this form individually. Your details are sent privately and will not be shared with other board members.
+</div>
+
+<form id="declaration-form" novalidate>
+
+  <!-- Section 1: Role -->
+  <div class="card">
+    <div class="section-title">Your Role</div>
+
+    <div class="field-group">
+      <div class="field">
+        <label for="role">Position in the association <span class="required">*</span></label>
+        <select id="role" name="role" required>
+          <option value="">Select your role</option>
+          <option value="Président(e)">President</option>
+          <option value="Vice-président(e)">Vice-President</option>
+          <option value="Secrétaire">Secretary</option>
+          <option value="Secrétaire adjoint(e)">Deputy Secretary</option>
+          <option value="Trésorier(e)">Treasurer</option>
+          <option value="Trésorier(e) adjoint(e)">Deputy Treasurer</option>
+          <option value="Administrateur(trice)">Board Member (Administrateur)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field">
+        <label>Decision date</label>
+        <input type="text" value="25 February 2026" readonly style="opacity:0.5; cursor:default;">
+        <span class="field-hint">Date of the general assembly at which you were elected.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Personal details -->
+  <div class="card">
+    <div class="section-title">Personal Details</div>
+
+    <div class="field-group" style="margin-bottom:18px;">
+      <div class="field">
+        <label>Title <span class="required">*</span></label>
+        <div class="radio-group" id="civility-group">
+          <label class="radio-option">
+            <input type="radio" name="civility" value="M." required> Mr
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="civility" value="Mme"> Ms / Mrs
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="field-group cols-2">
+      <div class="field">
+        <label for="surname">Surname <span class="required">*</span></label>
+        <input type="text" id="surname" name="surname" autocomplete="family-name" required placeholder="Family name">
+      </div>
+      <div class="field">
+        <label for="firstname">First name <span class="required">*</span></label>
+        <input type="text" id="firstname" name="firstname" autocomplete="given-name" required placeholder="Given name">
+      </div>
+    </div>
+
+    <div class="field-group cols-2">
+      <div class="field">
+        <label for="nationality">Nationality <span class="required">*</span></label>
+        <input type="text" id="nationality" name="nationality" required placeholder="e.g. French, German, Dutch">
+      </div>
+      <div class="field">
+        <label for="profession">Profession <span class="required">*</span></label>
+        <input type="text" id="profession" name="profession" required placeholder="Your current occupation">
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Address -->
+  <div class="card">
+    <div class="section-title">Home Address</div>
+    <p class="address-note">Your home address is required by French law for the association registry. It will not be published or shared beyond the official declaration.</p>
+
+    <div class="field-group cols-2">
+      <div class="field">
+        <label for="apt">Flat / Floor / Staircase</label>
+        <input type="text" id="apt" name="apt" placeholder="e.g. Apt 3B, Floor 2">
+      </div>
+      <div class="field">
+        <label for="building">Building / Residence name</label>
+        <input type="text" id="building" name="building" placeholder="e.g. Résidence Les Pins">
+      </div>
+    </div>
+
+    <div class="field-group cols-auto">
+      <div class="field">
+        <label for="street_number">Number <span class="required">*</span></label>
+        <input type="text" id="street_number" name="street_number" required placeholder="12">
+      </div>
+      <div class="field">
+        <label for="street_ext">Extension</label>
+        <input type="text" id="street_ext" name="street_ext" placeholder="bis, ter…">
+      </div>
+      <div class="field">
+        <label for="street_name">Street name <span class="required">*</span></label>
+        <input type="text" id="street_name" name="street_name" required placeholder="Rue de la Paix">
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field">
+        <label for="po_box">PO Box / Lieu-dit</label>
+        <input type="text" id="po_box" name="po_box" placeholder="Leave blank if not applicable">
+      </div>
+    </div>
+
+    <div class="field-group cols-2">
+      <div class="field">
+        <label for="postcode">Postal code <span class="required">*</span></label>
+        <input type="text" id="postcode" name="postcode" required placeholder="75001">
+      </div>
+      <div class="field">
+        <label for="city">City / Locality <span class="required">*</span></label>
+        <input type="text" id="city" name="city" required placeholder="Paris">
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field">
+        <label for="country">Country</label>
+        <input type="text" id="country" name="country" placeholder="France (leave blank if France)">
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: Contact -->
+  <div class="card">
+    <div class="section-title">Contact (for admin use only)</div>
+    <div class="field-group">
+      <div class="field">
+        <label for="email">Your email address <span class="required">*</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@example.com">
+        <span class="field-hint">Used only to confirm receipt. Not included in the official declaration.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <div class="card">
+    <div class="submit-area">
+      <p class="submit-note">
+        On submission, your details will be saved securely and a formatted summary will appear for you to copy or email to the administrator.
+      </p>
+      <button type="submit" id="submit-btn">Submit declaration</button>
+    </div>
+  </div>
+
+</form>
+
+<!-- Success screen -->
+<div id="success-screen">
+  <div class="success-card">
+    <div class="success-icon">&#10003;</div>
+    <h2>Declaration submitted</h2>
+    <p>Your details have been saved. Please also copy the text below and send it to the administrator at the email address you have been given.</p>
+
+    <div class="data-summary" id="data-summary"></div>
+
+    <div class="action-buttons">
+      <button class="btn-primary" id="copy-btn" onclick="copyData()">Copy to clipboard</button>
+      <button class="btn-primary" id="email-btn" onclick="openMailto()">Open in email client</button>
+      <button class="btn-secondary" onclick="resetForm()">Submit another response</button>
+    </div>
+    <div class="copy-feedback" id="copy-feedback">Copied to clipboard.</div>
+    <div class="save-status" id="save-status"></div>
+  </div>
+</div>
+
+</div><!-- .content-area -->
+
+<footer class="page-footer">
+  &copy; 2026 Modern Money Lab Europe. All rights reserved.
+</footer>
+
+<script>
+  // ── Configuration ──
+  // Replace this URL with your deployed Google Apps Script web app URL
+  const SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzaC9FA3wPg0fex_PvR5Gi8gSTKA9ykK7ot_Ndo0qMYbXpm-dfMcgnzK6R6sDkIT0qu/exec';
+
+  const form = document.getElementById('declaration-form');
+  const successScreen = document.getElementById('success-screen');
+  const dataSummary = document.getElementById('data-summary');
+  const submitBtn = document.getElementById('submit-btn');
+  const saveStatus = document.getElementById('save-status');
+
+  let summaryText = '';
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // ── Validation ──
+    const required = form.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(field => {
+      if (field.type === 'radio') return; // handled separately
+      if (!field.value.trim()) {
+        field.classList.add('is-error');
+        valid = false;
+      } else {
+        field.classList.remove('is-error');
+      }
+    });
+
+    const civility = form.querySelector('input[name="civility"]:checked');
+    const civilityGroup = document.getElementById('civility-group');
+    if (!civility) {
+      valid = false;
+      civilityGroup.classList.add('is-error');
+    } else {
+      civilityGroup.classList.remove('is-error');
+    }
+
+    if (!valid) {
+      const firstError = form.querySelector('.is-error');
+      if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    // ── Collect data ──
+    const data = {
+      role: document.getElementById('role').value,
+      civility: civility.value,
+      surname: document.getElementById('surname').value.toUpperCase(),
+      firstname: document.getElementById('firstname').value,
+      nationality: document.getElementById('nationality').value,
+      profession: document.getElementById('profession').value,
+      apt: document.getElementById('apt').value,
+      building: document.getElementById('building').value,
+      street_number: document.getElementById('street_number').value,
+      street_ext: document.getElementById('street_ext').value,
+      street_name: document.getElementById('street_name').value,
+      po_box: document.getElementById('po_box').value,
+      postcode: document.getElementById('postcode').value,
+      city: document.getElementById('city').value.toUpperCase(),
+      country: document.getElementById('country').value || 'France',
+      email: document.getElementById('email').value,
+    };
+
+    // ── Build summary text ──
+    const addressLine1 = [data.apt, data.building].filter(Boolean).join(' — ');
+    const streetLine = [data.street_number, data.street_ext, data.street_name].filter(Boolean).join(' ');
+    const addressLine3 = [data.postcode, data.city].filter(Boolean).join(' ');
+
+    summaryText = `MML EUROPE — BOARD MEMBER DECLARATION
+Cerfa N°13971*03 — Declaration date: 25 February 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ROLE IN ASSOCIATION
+${data.role}
+
+PERSONAL DETAILS
+Title:        ${data.civility}
+Surname:      ${data.surname}
+First name:   ${data.firstname}
+Nationality:  ${data.nationality}
+Profession:   ${data.profession}
+
+HOME ADDRESS
+${addressLine1 ? addressLine1 + '\n' : ''}${streetLine}
+${data.po_box ? data.po_box + '\n' : ''}${addressLine3}
+${data.country}
+
+CONTACT (admin use only)
+Email: ${data.email}`;
+
+    // ── Show success screen ──
+    dataSummary.textContent = summaryText;
+    form.style.display = 'none';
+    successScreen.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // ── Save to Google Sheets (non-blocking) ──
+    if (SHEETS_WEBHOOK_URL && SHEETS_WEBHOOK_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+      saveStatus.textContent = 'Saving to database…';
+      saveStatus.className = 'save-status';
+      saveStatus.style.display = 'block';
+
+      try {
+        await fetch(SHEETS_WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(data)
+        });
+        saveStatus.textContent = 'Saved successfully.';
+        saveStatus.className = 'save-status is-success';
+      } catch (err) {
+        console.error('Failed to save to Google Sheets:', err);
+        saveStatus.textContent = 'Could not save automatically. Please use the copy/email buttons below.';
+        saveStatus.className = 'save-status is-error';
+      }
+    }
+  });
+
+  function copyData() {
+    navigator.clipboard.writeText(summaryText).then(() => {
+      const feedback = document.getElementById('copy-feedback');
+      feedback.style.display = 'block';
+      setTimeout(() => feedback.style.display = 'none', 3000);
+    }).catch(() => {
+      const ta = document.createElement('textarea');
+      ta.value = summaryText;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      const feedback = document.getElementById('copy-feedback');
+      feedback.style.display = 'block';
+      setTimeout(() => feedback.style.display = 'none', 3000);
+    });
+  }
+
+  function openMailto() {
+    const subject = encodeURIComponent('MML EU Board Declaration — ' + document.getElementById('surname').value + ' ' + document.getElementById('firstname').value);
+    const body = encodeURIComponent(summaryText);
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+  }
+
+  function resetForm() {
+    form.reset();
+    form.style.display = 'block';
+    successScreen.style.display = 'none';
+    saveStatus.style.display = 'none';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Clear error state on input
+  form.querySelectorAll('input, select').forEach(el => {
+    el.addEventListener('input', function() {
+      this.classList.remove('is-error');
+    });
+    el.addEventListener('change', function() {
+      this.classList.remove('is-error');
+      // Also clear radio group error
+      const group = this.closest('.radio-group');
+      if (group) group.classList.remove('is-error');
+    });
+  });
+</script>
+</body>
+</html>
