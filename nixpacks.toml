@@ -1,10 +1,10 @@
-# Railway deployment configuration for static site with nginx
+# Railway deployment configuration for Astro static site with nginx
 
 [phases.setup]
-nixPkgs = ["nginx"]
+nixPkgs = ["nginx", "nodejs_20", "npm-9_x"]
 
 [phases.build]
-cmds = []
+cmds = ["npm ci", "npm run build"]
 
 [start]
 cmd = "nginx -c /app/nginx.conf -g 'daemon off;'"
