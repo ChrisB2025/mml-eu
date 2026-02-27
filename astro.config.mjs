@@ -15,8 +15,18 @@ export default defineConfig({
     assets: 'assets'
   },
 
-  // Development server
+  // Server options
   server: {
-    port: 3000
+    port: 3000,
+    host: true
+  },
+
+  vite: {
+    preview: {
+      allowedHosts: true
+    },
+    server: {
+      allowedHosts: true
+    }
   }
 });
