@@ -332,72 +332,6 @@
     margin-bottom: 28px;
   }
 
-  .data-summary {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-input);
-    padding: 20px 24px;
-    text-align: left;
-    font-size: 0.82rem;
-    line-height: 1.9;
-    color: var(--ink);
-    margin-bottom: 24px;
-    white-space: pre-wrap;
-    word-break: break-word;
-    font-family: 'Instrument Sans', sans-serif;
-  }
-
-  .action-buttons {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: #fff;
-    background: var(--accent);
-    border: none;
-    border-radius: var(--radius-btn);
-    padding: 0.85em 1.5em;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.15s;
-    letter-spacing: -0.01em;
-  }
-
-  .btn-primary:hover { background: var(--accent-hover); }
-
-  .btn-secondary {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--ink);
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-btn);
-    padding: 0.85em 1.5em;
-    cursor: pointer;
-    transition: border-color 0.15s, background 0.15s;
-    letter-spacing: -0.01em;
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--accent);
-    background: var(--accent-light);
-  }
-
-  .copy-feedback {
-    font-size: 0.75rem;
-    color: var(--success);
-    display: none;
-    margin-top: 8px;
-  }
-
   .save-status {
     font-size: 0.75rem;
     color: var(--muted);
@@ -680,16 +614,7 @@
   <div class="success-card">
     <div class="success-icon">&#10003;</div>
     <h2>Declaration submitted</h2>
-    <p>Your details have been saved. Please also copy the text below and send it to the administrator at the email address you have been given.</p>
-
-    <div class="data-summary" id="data-summary"></div>
-
-    <div class="action-buttons">
-      <button class="btn-primary" id="copy-btn" onclick="copyData()">Copy to clipboard</button>
-      <button class="btn-primary" id="email-btn" onclick="openMailto()">Open in email client</button>
-      <button class="btn-secondary" onclick="resetForm()">Submit another response</button>
-    </div>
-    <div class="copy-feedback" id="copy-feedback">Copied to clipboard.</div>
+    <p>Thank you. Your details have been saved securely and sent to the administrator.</p>
     <div class="save-status" id="save-status"></div>
   </div>
 </div>
@@ -707,11 +632,8 @@
 
   const form = document.getElementById('declaration-form');
   const successScreen = document.getElementById('success-screen');
-  const dataSummary = document.getElementById('data-summary');
   const submitBtn = document.getElementById('submit-btn');
   const saveStatus = document.getElementById('save-status');
-
-  let summaryText = '';
 
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -720,8 +642,8 @@
     const required = form.querySelectorAll('[required]');
     let valid = true;
     required.forEach(field => {
-      if (field.type === 'radio') return; // handled separately
-      if (field.type === 'checkbox') return; // handled separately
+      if (field.type === 'radio') return;
+      if (field.type === 'checkbox') return;
       if (!field.value.trim()) {
         field.classList.add('is-error');
         valid = false;
@@ -772,44 +694,17 @@
       city: document.getElementById('city').value.toUpperCase(),
       country: document.getElementById('country').value || 'France',
       email: document.getElementById('email').value,
+      gdpr_consent: 'Yes',
     };
 
-    // ── Build summary text ──
-    const addressLine1 = [data.flat, data.building].filter(Boolean).join(' — ');
-    const streetLine = [data.number, data.extension, data.street_name].filter(Boolean).join(' ');
-    const addressLine3 = [data.postal_code, data.city].filter(Boolean).join(' ');
-
-    summaryText = `MML EUROPE — BOARD MEMBER DECLARATION
-Cerfa N°13971*03 — Declaration date: 25 February 2026
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-ROLE IN ASSOCIATION
-${data.role}
-
-PERSONAL DETAILS
-Title:        ${data.title}
-Surname:      ${data.surname}
-First name:   ${data.first_name}
-Nationality:  ${data.nationality}
-Profession:   ${data.profession}
-
-HOME ADDRESS
-${addressLine1 ? addressLine1 + '\n' : ''}${streetLine}
-${data.po_box ? data.po_box + '\n' : ''}${addressLine3}
-${data.country}
-
-CONTACT (admin use only)
-Email: ${data.email}`;
-
     // ── Show success screen ──
-    dataSummary.textContent = summaryText;
     form.style.display = 'none';
     successScreen.style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // ── Save to Google Sheets (non-blocking) ──
+    // ── Save to Google Sheets ──
     if (SHEETS_WEBHOOK_URL && SHEETS_WEBHOOK_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
-      saveStatus.textContent = 'Saving to database…';
+      saveStatus.textContent = 'Saving…';
       saveStatus.className = 'save-status';
       saveStatus.style.display = 'block';
 
@@ -824,43 +719,11 @@ Email: ${data.email}`;
         saveStatus.className = 'save-status is-success';
       } catch (err) {
         console.error('Failed to save to Google Sheets:', err);
-        saveStatus.textContent = 'Could not save automatically. Please use the copy/email buttons below.';
+        saveStatus.textContent = 'There was a problem saving your data. Please contact the administrator.';
         saveStatus.className = 'save-status is-error';
       }
     }
   });
-
-  function copyData() {
-    navigator.clipboard.writeText(summaryText).then(() => {
-      const feedback = document.getElementById('copy-feedback');
-      feedback.style.display = 'block';
-      setTimeout(() => feedback.style.display = 'none', 3000);
-    }).catch(() => {
-      const ta = document.createElement('textarea');
-      ta.value = summaryText;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-      const feedback = document.getElementById('copy-feedback');
-      feedback.style.display = 'block';
-      setTimeout(() => feedback.style.display = 'none', 3000);
-    });
-  }
-
-  function openMailto() {
-    const subject = encodeURIComponent('MML EU Board Declaration — ' + document.getElementById('surname').value + ' ' + document.getElementById('first_name').value);
-    const body = encodeURIComponent(summaryText);
-    window.location.href = `mailto:?subject=${subject}&body=${body}`;
-  }
-
-  function resetForm() {
-    form.reset();
-    form.style.display = 'block';
-    successScreen.style.display = 'none';
-    saveStatus.style.display = 'none';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
 
   // Clear error state on input
   form.querySelectorAll('input, select').forEach(el => {
@@ -869,9 +732,10 @@ Email: ${data.email}`;
     });
     el.addEventListener('change', function() {
       this.classList.remove('is-error');
-      // Also clear radio group error
       const group = this.closest('.radio-group');
       if (group) group.classList.remove('is-error');
+      const label = this.closest('.consent-label');
+      if (label) label.classList.remove('is-error');
     });
   });
 </script>

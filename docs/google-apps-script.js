@@ -6,7 +6,7 @@
  * 2. Add these column headers in row 1:
  *    Timestamp | Role | Title | Surname | First Name | Nationality | Profession |
  *    Flat | Building | Number | Extension | Street Name | PO Box |
- *    Postal Code | City | Country | Email
+ *    Postal Code | City | Country | Email | GDPR
  * 3. Go to Extensions > Apps Script
  * 4. Delete any existing code and paste this entire file
  * 5. Click Deploy > New deployment
@@ -39,7 +39,8 @@ function doPost(e) {
     data.postal_code || '',
     data.city || '',
     data.country || '',
-    data.email || ''
+    data.email || '',
+    data.gdpr_consent || ''
   ]);
 
   return ContentService
