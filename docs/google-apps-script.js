@@ -5,8 +5,8 @@
  * 1. Go to https://sheets.google.com and create a new spreadsheet
  * 2. Add these column headers in row 1:
  *    Timestamp | Role | Title | Surname | First Name | Nationality | Profession |
- *    Apt | Building | Street Number | Street Ext | Street Name | PO Box |
- *    Postcode | City | Country | Email
+ *    Flat | Building | Number | Extension | Street Name | PO Box |
+ *    Postal Code | City | Country | Email
  * 3. Go to Extensions > Apps Script
  * 4. Delete any existing code and paste this entire file
  * 5. Click Deploy > New deployment
@@ -25,18 +25,18 @@ function doPost(e) {
   sheet.appendRow([
     new Date().toISOString(),
     data.role || '',
-    data.civility || '',
+    data.title || '',
     data.surname || '',
-    data.firstname || '',
+    data.first_name || '',
     data.nationality || '',
     data.profession || '',
-    data.apt || '',
+    data.flat || '',
     data.building || '',
-    data.street_number || '',
-    data.street_ext || '',
+    data.number || '',
+    data.extension || '',
     data.street_name || '',
     data.po_box || '',
-    data.postcode || '',
+    data.postal_code || '',
     data.city || '',
     data.country || '',
     data.email || ''

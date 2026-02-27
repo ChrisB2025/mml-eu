@@ -417,6 +417,59 @@
     color: var(--muted);
   }
 
+  /* ── GDPR section ── */
+  .gdpr-notice {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .gdpr-notice p {
+    margin-bottom: 10px;
+  }
+
+  .gdpr-notice a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .gdpr-notice a:hover {
+    text-decoration: underline;
+  }
+
+  .consent-field {
+    padding-top: 4px;
+  }
+
+  .consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+
+  .consent-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .consent-label.is-error {
+    outline: 2px solid var(--error);
+    outline-offset: 6px;
+    border-radius: var(--radius-input);
+  }
+
   @media (max-width: 600px) {
     .page-header { padding: 40px 20px 36px; }
     .page-header h1 { font-size: 2rem; }
@@ -488,12 +541,12 @@
     <div class="field-group" style="margin-bottom:18px;">
       <div class="field">
         <label>Title <span class="required">*</span></label>
-        <div class="radio-group" id="civility-group">
+        <div class="radio-group" id="title-group">
           <label class="radio-option">
-            <input type="radio" name="civility" value="M." required> Mr
+            <input type="radio" name="title" value="M." required> Mr
           </label>
           <label class="radio-option">
-            <input type="radio" name="civility" value="Mme"> Ms / Mrs
+            <input type="radio" name="title" value="Mme"> Ms / Mrs
           </label>
         </div>
       </div>
@@ -505,8 +558,8 @@
         <input type="text" id="surname" name="surname" autocomplete="family-name" required placeholder="Family name">
       </div>
       <div class="field">
-        <label for="firstname">First name <span class="required">*</span></label>
-        <input type="text" id="firstname" name="firstname" autocomplete="given-name" required placeholder="Given name">
+        <label for="first_name">First name <span class="required">*</span></label>
+        <input type="text" id="first_name" name="first_name" autocomplete="given-name" required placeholder="Given name">
       </div>
     </div>
 
@@ -529,8 +582,8 @@
 
     <div class="field-group cols-2">
       <div class="field">
-        <label for="apt">Flat / Floor / Staircase</label>
-        <input type="text" id="apt" name="apt" placeholder="e.g. Apt 3B, Floor 2">
+        <label for="flat">Flat / Floor / Staircase</label>
+        <input type="text" id="flat" name="flat" placeholder="e.g. Apt 3B, Floor 2">
       </div>
       <div class="field">
         <label for="building">Building / Residence name</label>
@@ -540,12 +593,12 @@
 
     <div class="field-group cols-auto">
       <div class="field">
-        <label for="street_number">Number <span class="required">*</span></label>
-        <input type="text" id="street_number" name="street_number" required placeholder="12">
+        <label for="number">Number <span class="required">*</span></label>
+        <input type="text" id="number" name="number" required placeholder="12">
       </div>
       <div class="field">
-        <label for="street_ext">Extension</label>
-        <input type="text" id="street_ext" name="street_ext" placeholder="bis, ter…">
+        <label for="extension">Extension</label>
+        <input type="text" id="extension" name="extension" placeholder="bis, ter…">
       </div>
       <div class="field">
         <label for="street_name">Street name <span class="required">*</span></label>
@@ -562,8 +615,8 @@
 
     <div class="field-group cols-2">
       <div class="field">
-        <label for="postcode">Postal code <span class="required">*</span></label>
-        <input type="text" id="postcode" name="postcode" required placeholder="75001">
+        <label for="postal_code">Postal code <span class="required">*</span></label>
+        <input type="text" id="postal_code" name="postal_code" required placeholder="75001">
       </div>
       <div class="field">
         <label for="city">City / Locality <span class="required">*</span></label>
@@ -591,11 +644,30 @@
     </div>
   </div>
 
+  <!-- Data Protection & Consent -->
+  <div class="card">
+    <div class="section-title">Data Protection</div>
+    <div class="gdpr-notice">
+      <p><strong>Data controller:</strong> Modern Money Lab Europe (MML EU), association under French law of 1 July 1901.</p>
+      <p><strong>Purpose:</strong> Your personal data is collected solely for the purpose of registering MML Europe with the French Pr&eacute;fecture, as required by Articles 5 and 6 of the law of 1 July 1901 and Decree of 16 August 1901. This includes your identity, role, and home address.</p>
+      <p><strong>Legal basis:</strong> Legal obligation (French association registration law) and your consent as a board member.</p>
+      <p><strong>Recipients:</strong> Your data will be shared only with the association administrator responsible for filing the declaration with the Pr&eacute;fecture, and with the Pr&eacute;fecture itself. It will not be shared with other board members, third parties, or used for any other purpose.</p>
+      <p><strong>Retention:</strong> Your data will be retained for the duration of your board membership and for the legally required period thereafter. You may request deletion once you leave the board, subject to legal retention requirements.</p>
+      <p><strong>Your rights:</strong> Under the EU General Data Protection Regulation (GDPR), you have the right to access, rectify, erase, restrict processing, and port your data. To exercise these rights, contact <a href="mailto:info@modernmoneylabeu.org">info@modernmoneylabeu.org</a>.</p>
+    </div>
+    <div class="consent-field">
+      <label class="consent-label">
+        <input type="checkbox" id="gdpr_consent" name="gdpr_consent" required>
+        <span>I have read and understood the above data protection notice. I consent to the processing of my personal data for the sole purpose of registering MML Europe as a French association. <span class="required">*</span></span>
+      </label>
+    </div>
+  </div>
+
   <!-- Submit -->
   <div class="card">
     <div class="submit-area">
       <p class="submit-note">
-        On submission, your details will be saved securely and a formatted summary will appear for you to copy or email to the administrator.
+        On submission, your details will be saved securely and a formatted summary will appear for you to copy or email to the administrator. No data is stored on any public server &mdash; it is sent directly to a private, access-restricted spreadsheet.
       </p>
       <button type="submit" id="submit-btn">Submit declaration</button>
     </div>
@@ -649,6 +721,7 @@
     let valid = true;
     required.forEach(field => {
       if (field.type === 'radio') return; // handled separately
+      if (field.type === 'checkbox') return; // handled separately
       if (!field.value.trim()) {
         field.classList.add('is-error');
         valid = false;
@@ -657,13 +730,22 @@
       }
     });
 
-    const civility = form.querySelector('input[name="civility"]:checked');
-    const civilityGroup = document.getElementById('civility-group');
-    if (!civility) {
+    const title = form.querySelector('input[name="title"]:checked');
+    const titleGroup = document.getElementById('title-group');
+    if (!title) {
       valid = false;
-      civilityGroup.classList.add('is-error');
+      titleGroup.classList.add('is-error');
     } else {
-      civilityGroup.classList.remove('is-error');
+      titleGroup.classList.remove('is-error');
+    }
+
+    const gdprConsent = document.getElementById('gdpr_consent');
+    const consentLabel = gdprConsent.closest('.consent-label');
+    if (!gdprConsent.checked) {
+      valid = false;
+      consentLabel.classList.add('is-error');
+    } else {
+      consentLabel.classList.remove('is-error');
     }
 
     if (!valid) {
@@ -675,27 +757,27 @@
     // ── Collect data ──
     const data = {
       role: document.getElementById('role').value,
-      civility: civility.value,
+      title: title.value,
       surname: document.getElementById('surname').value.toUpperCase(),
-      firstname: document.getElementById('firstname').value,
+      first_name: document.getElementById('first_name').value,
       nationality: document.getElementById('nationality').value,
       profession: document.getElementById('profession').value,
-      apt: document.getElementById('apt').value,
+      flat: document.getElementById('flat').value,
       building: document.getElementById('building').value,
-      street_number: document.getElementById('street_number').value,
-      street_ext: document.getElementById('street_ext').value,
+      number: document.getElementById('number').value,
+      extension: document.getElementById('extension').value,
       street_name: document.getElementById('street_name').value,
       po_box: document.getElementById('po_box').value,
-      postcode: document.getElementById('postcode').value,
+      postal_code: document.getElementById('postal_code').value,
       city: document.getElementById('city').value.toUpperCase(),
       country: document.getElementById('country').value || 'France',
       email: document.getElementById('email').value,
     };
 
     // ── Build summary text ──
-    const addressLine1 = [data.apt, data.building].filter(Boolean).join(' — ');
-    const streetLine = [data.street_number, data.street_ext, data.street_name].filter(Boolean).join(' ');
-    const addressLine3 = [data.postcode, data.city].filter(Boolean).join(' ');
+    const addressLine1 = [data.flat, data.building].filter(Boolean).join(' — ');
+    const streetLine = [data.number, data.extension, data.street_name].filter(Boolean).join(' ');
+    const addressLine3 = [data.postal_code, data.city].filter(Boolean).join(' ');
 
     summaryText = `MML EUROPE — BOARD MEMBER DECLARATION
 Cerfa N°13971*03 — Declaration date: 25 February 2026
@@ -705,9 +787,9 @@ ROLE IN ASSOCIATION
 ${data.role}
 
 PERSONAL DETAILS
-Title:        ${data.civility}
+Title:        ${data.title}
 Surname:      ${data.surname}
-First name:   ${data.firstname}
+First name:   ${data.first_name}
 Nationality:  ${data.nationality}
 Profession:   ${data.profession}
 
@@ -767,7 +849,7 @@ Email: ${data.email}`;
   }
 
   function openMailto() {
-    const subject = encodeURIComponent('MML EU Board Declaration — ' + document.getElementById('surname').value + ' ' + document.getElementById('firstname').value);
+    const subject = encodeURIComponent('MML EU Board Declaration — ' + document.getElementById('surname').value + ' ' + document.getElementById('first_name').value);
     const body = encodeURIComponent(summaryText);
     window.location.href = `mailto:?subject=${subject}&body=${body}`;
   }
